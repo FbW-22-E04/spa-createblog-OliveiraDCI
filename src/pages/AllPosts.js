@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 function AllPosts(props) {
-  const handleDelete = (e) => {
-    // it is not yet properly deleting, this is just a visual effect. will be improving it later on.
-    e.target.parentElement.parentElement.parentElement.style.border = "none";
-    e.target.parentElement.parentElement.parentElement.innerHTML = "";
+  const handleDelete = (idx) => {
+    const middleStep = [...props.allPosts];
+    middleStep.splice(idx, 1);
+    props.cb(middleStep);
   };
   return (
     <div className="container w-[80vw] mx-auto max-w-[600px]">
@@ -30,7 +30,10 @@ function AllPosts(props) {
                   <span className="btn-edit">edit</span>
                 </Link>
                 <Link>
-                  <span className="btn-delete" onClick={handleDelete}>
+                  <span
+                    className="btn-delete"
+                    onClick={() => handleDelete(idx)}
+                  >
                     delete
                   </span>
                 </Link>
