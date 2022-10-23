@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 
 function AllPosts(props) {
+  const handleView = (idx) => {
+    console.log("idx", idx);
+    console.log("props-allPosts", props.allPosts[idx]);
+    props.cbSinglePost(props.allPosts[idx]);
+  };
+
   const handleDelete = (idx) => {
     const middleStep = [...props.allPosts];
     middleStep.splice(idx, 1);
@@ -23,7 +29,7 @@ function AllPosts(props) {
                 {post.date ? "on " + post.date : null}
               </div>
               <div className="btns-container">
-                <Link to="/singlepost">
+                <Link to="/singlepost" onClick={() => handleView(idx)}>
                   <span className="btn-view">full view</span>
                 </Link>
                 <Link>

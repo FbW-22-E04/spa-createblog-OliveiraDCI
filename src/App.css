@@ -109,6 +109,7 @@ button:active {
   margin: 0.5em 0;
 }
 
+button,
 .btn-edit,
 .btn-delete,
 .btn-view,
@@ -121,6 +122,7 @@ button:active {
   cursor: pointer;
 }
 
+button:hover,
 .btn-edit:hover,
 .btn-delete:hover,
 .btn-view:hover,

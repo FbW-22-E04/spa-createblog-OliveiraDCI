@@ -12,6 +12,7 @@ import "./App.css";
 
 function App() {
   const [allPosts, setAllPosts] = useState([]);
+  const [singlePost, setSinglePost] = useState({});
 
   return (
     <BrowserRouter>
@@ -25,9 +26,18 @@ function App() {
         />
         <Route
           path="/allposts"
-          element={<AllPosts allPosts={allPosts} cb={setAllPosts} />}
+          element={
+            <AllPosts
+              allPosts={allPosts}
+              cb={setAllPosts}
+              cbSinglePost={setSinglePost}
+            />
+          }
         />
-        <Route path="/singlepost" element={<SinglePost />} />
+        <Route
+          path="/singlepost"
+          element={<SinglePost singlePost={singlePost} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
