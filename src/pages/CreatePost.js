@@ -32,33 +32,22 @@ function CreatePost(props) {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Your Name:{" "}
-            <input onChange={handleInput} name="name" type="text" required />
+            Your Name: <input onChange={handleInput} name="name" type="text" />
           </label>
         </div>
         <div>
           <label>
             Post Title:{" "}
-            <input onChange={handleInput} name="title" type="text" required />
+            <input onChange={handleInput} name="title" type="text" />
           </label>
         </div>
         <div>
           <label>
             Post Text:{" "}
-            <textarea
-              onChange={handleInput}
-              name="text"
-              type="text"
-              rows="5"
-              required
-            />
+            <textarea onChange={handleInput} name="text" type="text" rows="5" />
           </label>
         </div>
-        <button
-          type="submit"
-          className="p-1 border-2 rounded-xl w-[100%] bg-slate-200 text-black"
-          onClick={handleSubmit}
-        >
+        <button type="submit" onClick={handleSubmit}>
           submit
         </button>
       </form>

@@ -4,7 +4,6 @@ function Header() {
   return (
     <main>
       <header>
-        <h1>My Blog </h1>
         <ul>
           <NavLink
             to="/home"

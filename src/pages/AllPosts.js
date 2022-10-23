@@ -14,7 +14,7 @@ function AllPosts(props) {
   };
   return (
     <div className="container w-[80vw] mx-auto max-w-[600px]">
-      <h2>AllPosts Page</h2>
+      <h2>AllPosts</h2>
       <div>
         {props.allPosts.map((post, idx) => {
           return (
